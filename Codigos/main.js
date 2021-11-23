@@ -1,3 +1,6 @@
+//Feito por Pablo Magalhães
+//TIAW - Sprint 3
+//Engenharia de Software - Má Gestão do Tempo
 
 window.onload = () => {
 
