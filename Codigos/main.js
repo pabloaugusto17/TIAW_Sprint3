@@ -210,6 +210,17 @@ function muda_descricao(id_habito, barra_habito_x){
             
         let descricao_nova = prompt("Informe o novo hábito: ");
 
+        //Laço para não deixar o usuário informar algo nulo
+        do{ 
+            
+            if(descricao_nova == "" || descricao_nova == "null"){
+                descricao_nova = prompt("Descrição inválida, informe outra: ");
+            }else{
+                break;
+            }
+
+        }while(true);
+
         let objeto = JSON.parse(localStorage.getItem(barra_habito_x));
         objeto.descricao = descricao_nova;
 
