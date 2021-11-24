@@ -66,6 +66,64 @@ window.onload = () => {
 
         muda_descricao(3, 'barra_habito_4');
     }
+
+    let botao = document.getElementById('botao_exclui');
+
+    botao.onclick = () => {
+        if (confirm("Você deseja excluir algum hábito ? ") == true){
+
+            let excluir = prompt("Informe a descrição do hábito que deseja excluir: ");
+
+            let desc_1 = JSON.parse(localStorage.getItem('barra_habito_1'));
+            let desc_2 = JSON.parse(localStorage.getItem('barra_habito_2'));
+            let desc_3 = JSON.parse(localStorage.getItem('barra_habito_3'));
+            let desc_4 = JSON.parse(localStorage.getItem('barra_habito_4'));
+
+            do{
+
+                if(excluir == desc_1.descricao){
+                
+                    window.circulo_1.style.visibility = 'hidden';
+                    window.descricao_1.style.visibility = 'hidden';
+                    break;
+                    
+                }
+    
+                if(excluir == desc_2.descricao){
+                    
+                    window.circulo_2.style.visibility = 'hidden';
+                    window.descricao_2.style.visibility = 'hidden';
+                    break;
+                    
+                }
+    
+                if(excluir == desc_3.descricao){
+                    
+                    window.circulo_3.style.visibility = 'hidden';
+                    window.descricao_3.style.visibility = 'hidden';
+                    break;
+                }
+    
+                if(excluir == desc_4.descricao){
+                    
+                    window.circulo_4.style.visibility = 'hidden';
+                    window.descricao_4.style.visibility = 'hidden';
+                    break;
+                    
+                }
+
+                excluir = prompt("Descrição errada, informe uma válida EX: ",desc_1.descricao);
+
+
+            }while(true);
+
+            
+            
+
+        }
+    }
+
+    
 }
 
 //Arquitetura JSON de molde
@@ -159,6 +217,8 @@ function carrega_imagens(){
         window.check_4.style.visibility = 'visible';
     }
 
+
+
     
 
 }
@@ -231,6 +291,7 @@ function muda_descricao(id_habito, barra_habito_x){
     }
 
 }
+
 
 
 
